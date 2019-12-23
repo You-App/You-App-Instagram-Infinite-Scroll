@@ -1,0 +1,58 @@
+body {
+    font-family: 'Lato';
+    background: #eee;
+    font-size: 14px;
+    margin: 0;
+    padding:0;
+}
+
+.insta-target{float:left; width:100%;margin-top: 10px}
+
+	.image-inst{float:left;width:23%;margin: 1%; overflow:hidden;text-align: center; background: #fff; position: relative}
+	.image-inst a{display:block;color:#000;text-decoration: none;}
+	
+		.cont-image-cap{float:left; width:100%; position: relative;}
+			.image-cap{position: absolute; bottom:3px; left:0;margin:0;padding:0;float:left; width:100%;background: #333; overflow:hidden; height:0;opacity:0;
+				-webkit-transition: all 0.3s ease-in-out;
+				-moz-transition: all 0.3s ease-in-out;
+				-ms-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+				}
+			.image-cap p{width:90%;padding:5% 5% 20% 5%;display: block; color:#fff}
+		
+			.cont-image-cap:hover .image-cap{height: auto; min-height:140px;max-height:300px;opacity:0.8;}
+	
+	.cop-image{width:100%; height:auto;}
+	
+	.profile-picture{border-radius:300px; width:100px; height:auto;margin-top:-50px;position: relative;z-index:10}
+	
+	.user{float:left; width:96%;padding-left:2%; padding-right:2%; text-transform: capitalize; padding-bottom: 10px;color:#333}
+	.user i{color:#999}
+	.location{float:left; width:100%; position: absolute; top:0; font-size:12px;left:0;text-align: left;margin-left: 10px; color:#fff; text-shadow: 1px 1px 4px #333}
+	
+
+
+	.loader, .mex {float:left; width:100%; text-align: center}
+	
+/* Media Queries */
+
+@media (max-width: 1200px) { 
+
+	.image-inst{width:31%;margin: 1%;}
+
+}
+
+@media (max-width: 1023px) { 
+
+	.image-inst{width:48%;margin: 1%;}
+	
+}
+
+@media (max-width: 760px) { 
+	
+	.image-inst{width:98%;margin: 1%;}
+	
+}
+
+

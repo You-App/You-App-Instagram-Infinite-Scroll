@@ -1,0 +1,74 @@
+<div class="main-feed">
+	<!-- FEED -->
+
+	<div class="insta-target">
+		
+		<!-- Loader -->
+		
+		{{#instagramData.data.length == 0}}
+			{{# !loading }}
+			<div class="mex">
+				<p class='dimmer'>
+					Notice: You must have access to Instagram to view this content.</p>
+				<p class='dimmer'>
+					For the best experience use the newest version of the Chrome, Internet Explorer, or Firefox browser.
+				</p>
+			</div>
+			{{/ !loading }}
+		{{/instagramData.data.length == 0}}
+		
+		
+		<!-- Picture Feed -->
+		
+		{{#instagramData.data:index}}
+		<div class="image-inst">
+		
+			<a href="{{link}}">
+				<div class="cont-image-cap">
+					<img class="cop-image" src="{{instagramData.data[index].images.low_resolution.url}}" alt="" />
+					<div class="image-cap">
+						<p>
+						{{instagramData.data[index].caption.text}}
+						</p>
+					</div>
+				</div>
+				
+					{{#instagramData.data[index].location.name != ''}}
+					<p class="location">
+						&nbsp; <i class="fa fa-map-marker"></i> {{instagramData.data[index].location.name}}
+					</p>	
+					{{/nstagramData.data[index].location.name != ''}}
+				
+				
+				<img class="profile-picture" src="{{instagramData.data[index].user.profile_picture}}" alt="">
+				
+				
+				<p class="user">
+					<i class="fa fa-user"></i> {{instagramData.data[index].user.username}}  
+					&nbsp; <i class="fa fa-heart"></i> {{instagramData.data[index].likes.count}} 
+					&nbsp; <i class="fa fa-adjust"></i> {{instagramData.data[index].filter}} 
+				</p>
+					
+					
+				
+			</a>
+		</div>
+		{{/instagramData.data}}
+
+
+		<!-- LOADING AND END OF FEED -->
+		
+		<div class="loader">
+		
+			<h3>{{#loading}}<i class="icon-spin6 animate-spin"></i> Loading Images...{{/loading}}</h3>
+			
+			{{#endOfFeed}}
+				<h3>You have reached the end of the Instagram #{{search}} feed.</h3>
+			{{/endOfFeed}}
+			
+		</div>
+
+	</div>
+</div>
+
+
