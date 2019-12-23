@@ -13,19 +13,19 @@ var instagramFeed = Ractive.extend({
     base = "https://api.instagram.com/v1";
     switch (this.data.method) {
       case "popular":
-        endpoint = "media/popular";
+        endpoint = "/popular";
         break;
       case "tags":
         if (typeof this.data.search !== 'string') {
           throw new Error("No tag name specified. Use the 'tagName' option.");
         }
-        endpoint = "tags/" + this.data.search + "/media/recent";
+        endpoint = "tags/" + this.data.search + "/recent";
         break;
       case "location":
         if (typeof this.data.location !== 'number') {
           throw new Error("No location specified. Use the 'locationId' option.");
         }
-        endpoint = "locations/" + this.data.search + "/media/recent";
+        endpoint = "locations/" + this.data.search + "/recent";
         break;
       case "user":
         if (typeof this.data.search !== 'number') {
@@ -34,7 +34,7 @@ var instagramFeed = Ractive.extend({
         if (typeof this.data.clientID !== 'string') {
           throw new Error("Invalid access token. Make sure you have a valid Instagram API access token.");
         }
-        endpoint = "users/" + this.data.search + "/media/recent";
+        endpoint = "users/" + this.data.search + "/recent";
         console.log(endpoint);
         break;
       default:
